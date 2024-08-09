@@ -1,4 +1,4 @@
-export var HttpStatus = /** @type {const} */ ({
+export var HttpStatuses = /** @type {const} */ ({
   Ok: {
     status: 200,
     statusText: "Ok",

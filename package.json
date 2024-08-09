@@ -1,6 +1,6 @@
 {
   "type": "module",
   "name": "@yurkimus/http-statuses",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "exports": "./source/index.js"
 }
