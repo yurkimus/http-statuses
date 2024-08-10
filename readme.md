@@ -1,6 +1,6 @@
-# Http methods
+# Http statuses
 
-Enumeration of supported HTTP methods.
+Enumeration of supported HTTP statuses.
 
 ## Table of Contents
 
