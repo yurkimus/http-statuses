@@ -1,12 +1,11 @@
 {
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "name": "@yurkimus/http-statuses",
   "author": {
     "name": "yurkimus",
     "email": "yurkimus@gmail.com"
   },
-  "main": "./source/index.js",
   "exports": "./source/index.js",
   "repository": {
     "type": "git",
