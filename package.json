@@ -1,6 +1,14 @@
 {
   "type": "module",
+  "version": "0.0.0",
   "name": "@yurkimus/http-statuses",
-  "version": "0.0.1",
-  "exports": "./source/index.js"
+  "author": {
+    "name": "yurkimus",
+    "email": "yurkimus@gmail.com"
+  },
+  "exports": "./source/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yurkimus/http-statuses.git"
+  }
 }
