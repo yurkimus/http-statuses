@@ -1,6 +1,4 @@
-import { Relation } from '@yurkimus/relation'
-
-export var HttpStatusesMap = {
+export var HttpStatuses = /** @type {const} */ ({
   'Continue': [
     100,
     'Continue',
@@ -185,10 +183,4 @@ export var HttpStatusesMap = {
     505,
     'HTTP Version Not Supported',
   ],
-}
-
-export var HttpStatuses = new Relation()
-
-for (var key in HttpStatusesMap) {
-  HttpStatuses.addNode(key, ...HttpStatusesMap[key])
-}
+})
