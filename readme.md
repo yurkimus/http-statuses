@@ -6,6 +6,7 @@ Enumeration of supported HTTP statuses.
 
 - [Installation](#installation)
 - [Exports](#exports)
+  - [HttpStatusesMap](#httpstatusesmap)
   - [HttpStatuses](#httpstatuses)
 - [License](#license)
 
@@ -33,23 +34,57 @@ npm install @yurkimus/http-statuses
 
 ## Exports
 
-### HttpStatuses
+### HttpStatusesMap
 
 #### Definition:
 
 ```
-HttpStatuses :: {
-  [status: string]: {
-    status: number,
-    statusText: string
-  }
+HttpStatusesMap :: Object {
+  <HTTP status name> => <HTTP status values>
 }
 ```
 
 #### Example:
 
 ```javascript
-HttpStatuses.NoContent // => { status: 204, statusText: 'No Content' }
+HttpStatuses['No Content'] // => [ 204, 'No Content' ]
+```
+
+### HttpStatuses
+
+#### Definition:
+
+```
+HttpStatuses :: Relation {
+  <HTTP status name> => <HTTP status value>
+}
+```
+
+#### Example:
+
+```javascript
+HttpStatuses.has(204) // => true
+HttpStatuses.has('No Content') // => true
+
+HttpStatuses.get('No Content') // => [ 204, 'No Content' ]
+HttpStatuses.get(204) // => 'No Content'
+
+HttpStatuses
+  .addNode('My', 42, 'Unknown')
+  .get(42) // => 'My Status'
+
+HttpStatuses
+  .get('My') // => [ 42, 'Unknown' ]
+
+HttpStatuses
+  .get(HttpStatuses.get('My')) // => 'My'
+
+MediaTypes
+  .addEdge('My', 'More information here')
+  .get('More information here') // => 'My'
+
+MediaTypes
+  .get('My') // => [ 42, 'Unknown', 'More information here' ]
 ```
 
 ## License
