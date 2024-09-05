@@ -1,186 +1,59 @@
-export var HttpStatuses = /** @type {const} */ ({
-  'Continue': [
-    100,
-    'Continue',
-  ],
-  'Switching Protocols': [
-    101,
-    'Switching Protocols',
-  ],
-  'Processing': [
-    102,
-    'Processing',
-  ],
-  'Early Hints': [
-    103,
-    'Early Hints',
-  ],
-  'OK': [
-    200,
-    'OK',
-  ],
-  'Created': [
-    201,
-    'Created',
-  ],
-  'Accepted': [
-    202,
-    'Accepted',
-  ],
-  'Non-Authoritative Information': [
-    203,
-    'Non-Authoritative Information',
-  ],
-  'No Content': [
-    204,
-    'No Content',
-  ],
-  'Reset Content': [
-    205,
-    'Reset Content',
-  ],
-  'Partial Content': [
-    206,
-    'Partial Content',
-  ],
-  'Multiple Choices': [
-    300,
-    'Multiple Choices',
-  ],
-  'Moved Permanently': [
-    301,
-    'Moved Permanently',
-  ],
-  'Found': [
-    302,
-    'Found',
-  ],
-  'See Other': [
-    303,
-    'See Other',
-  ],
-  'Not Modified': [
-    304,
-    'Not Modified',
-  ],
-  'Use Proxy': [
-    305,
-    'Use Proxy',
-  ],
-  'Temporary Redirect': [
-    307,
-    'Temporary Redirect',
-  ],
-  'Permanent Redirect': [
-    308,
-    'Permanent Redirect',
-  ],
-  'Bad Request': [
-    400,
-    'Bad Request',
-  ],
-  'Unauthorized': [
-    401,
-    'Unauthorized',
-  ],
-  'Payment Required': [
-    402,
-    'Payment Required',
-  ],
-  'Forbidden': [
-    403,
-    'Forbidden',
-  ],
-  'Not Found': [
-    404,
-    'Not Found',
-  ],
-  'Method Not Allowed': [
-    405,
-    'Method Not Allowed',
-  ],
-  'Not Acceptable': [
-    406,
-    'Not Acceptable',
-  ],
-  'Proxy Authentication Required': [
-    407,
-    'Proxy Authentication Required',
-  ],
-  'Request Timeout': [
-    408,
-    'Request Timeout',
-  ],
-  'Conflict': [
-    409,
-    'Conflict',
-  ],
-  'Gone': [
-    410,
-    'Gone',
-  ],
-  'Length Required': [
-    411,
-    'Length Required',
-  ],
-  'Precondition Failed': [
-    412,
-    'Precondition Failed',
-  ],
-  'Content Too Large': [
-    413,
-    'Content Too Large',
-  ],
-  'URI Too Long': [
-    414,
-    'URI Too Long',
-  ],
-  'UnsupportedMediaType': [
-    415,
-    'Unsupported Media Type',
-  ],
-  'Range Not Satisfiable': [
-    416,
-    'Range Not Satisfiable',
-  ],
-  'Expectation Failed': [
-    417,
-    'Expectation Failed',
-  ],
-  'Misdirected Request': [
-    421,
-    'Misdirected Request',
-  ],
-  'Unprocessable Content': [
-    422,
-    'Unprocessable Content',
-  ],
-  'Upgrade Required': [
-    426,
-    'Upgrade Required',
-  ],
-  'Internal Server Error': [
-    500,
-    'Internal Server Error',
-  ],
-  'Not Implemented': [
-    501,
-    'Not Implemented',
-  ],
-  'Bad Gateway': [
-    502,
-    'Bad Gateway',
-  ],
-  'Service Unavailable': [
-    503,
-    'Service Unavailable',
-  ],
-  'Gateway Timeout': [
-    504,
-    'Gateway Timeout',
-  ],
-  'HTTP Version Not Supported': [
-    505,
-    'HTTP Version Not Supported',
-  ],
+export var HttpStatusesMap = /** @type {const} */ ({
+  'Continue': 100,
+  'Switching Protocols': 101,
+  'Processing': 102,
+  'Early Hints': 103,
+  'OK': 200,
+  'Created': 201,
+  'Accepted': 202,
+  'Non-Authoritative Information': 203,
+  'No Content': 204,
+  'Reset Content': 205,
+  'Partial Content': 206,
+  'Multiple Choices': 300,
+  'Moved Permanently': 301,
+  'Found': 302,
+  'See Other': 303,
+  'Not Modified': 304,
+  'Use Proxy': 305,
+  'Temporary Redirect': 307,
+  'Permanent Redirect': 308,
+  'Bad Request': 400,
+  'Unauthorized': 401,
+  'Payment Required': 402,
+  'Forbidden': 403,
+  'Not Found': 404,
+  'Method Not Allowed': 405,
+  'Not Acceptable': 406,
+  'Proxy Authentication Required': 407,
+  'Request Timeout': 408,
+  'Conflict': 409,
+  'Gone': 410,
+  'Length Required': 411,
+  'Precondition Failed': 412,
+  'Content Too Large': 413,
+  'URI Too Long': 414,
+  'Unsupported Media Type': 415,
+  'Range Not Satisfiable': 416,
+  'Expectation Failed': 417,
+  'Misdirected Request': 421,
+  'Unprocessable Content': 422,
+  'Upgrade Required': 426,
+  'Internal Server Error': 500,
+  'Not Implemented': 501,
+  'Bad Gateway': 502,
+  'Service Unavailable': 503,
+  'Gateway Timeout': 504,
+  'HTTP Version Not Supported': 505,
+})
+
+/**
+ * @type {{ [Property in keyof HttpStatusesMap]: [status: HttpStatusesMap[Property], statusText: Property] }}
+ */
+export var HttpStatuses = new Proxy(HttpStatusesMap, {
+  get(target, property, receiver) {
+    return Reflect.has(target, property)
+      ? [Reflect.get(target, property), property]
+      : Reflect.get(target, property, receiver)
+  },
 })

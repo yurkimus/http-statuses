@@ -9,6 +9,7 @@ Statuses are coming from
 
 - [Installation](#installation)
 - [Exports](#exports)
+  - [HttpStatusesMap](#httpstatusesmap)
   - [HttpStatuses](#httpstatuses)
 - [License](#license)
 
@@ -36,17 +37,34 @@ npm install @yurkimus/http-statuses
 
 ## Exports
 
+### HttpStatusesMap
+
+#### Definition:
+
+```
+status :: Number
+statusText :: String
+
+HttpStatusesMap :: Object { [statusText]: status }
+```
+
+#### Example:
+
+```javascript
+HttpStatuses['No Content'] // => [ 204, 'No Content' ]
+```
+
 ### HttpStatuses
 
 #### Definition:
 
 ```
-HttpStatuses :: Object {
-  <name> => [
-    <HTTP status code>,
-    <HTTP status reason phrase>
-  ]
-}
+status :: Number
+statusText :: String
+
+HttpStatuses :: Proxy(Object) { [statusText]: status }
+
+Reflect.get(HttpStatuses) :: status -> [status, statusText]
 ```
 
 #### Example:
