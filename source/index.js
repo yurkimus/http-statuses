@@ -1,4 +1,4 @@
-export var HttpStatusesMap = /** @type {const} */ ({
+export var HttpStatuses = /** @type {const} */ ({
   'Continue': 100,
   'Switching Protocols': 101,
   'Processing': 102,
@@ -45,15 +45,4 @@ export var HttpStatusesMap = /** @type {const} */ ({
   'Service Unavailable': 503,
   'Gateway Timeout': 504,
   'HTTP Version Not Supported': 505,
-})
-
-/**
- * @type {{ [Property in keyof HttpStatusesMap]: [status: HttpStatusesMap[Property], statusText: Property] }}
- */
-export var HttpStatuses = new Proxy(HttpStatusesMap, {
-  get(target, property, receiver) {
-    return Reflect.has(target, property)
-      ? [Reflect.get(target, property), property]
-      : Reflect.get(target, property, receiver)
-  },
 })

@@ -37,23 +37,6 @@ npm install @yurkimus/http-statuses
 
 ## Exports
 
-### HttpStatusesMap
-
-#### Definition:
-
-```
-status :: Number
-statusText :: String
-
-HttpStatusesMap :: Object { [statusText]: status }
-```
-
-#### Example:
-
-```javascript
-HttpStatuses['No Content'] // => [ 204, 'No Content' ]
-```
-
 ### HttpStatuses
 
 #### Definition:
@@ -62,15 +45,13 @@ HttpStatuses['No Content'] // => [ 204, 'No Content' ]
 status :: Number
 statusText :: String
 
-HttpStatuses :: Proxy(Object) { [statusText]: status }
-
-Reflect.get(HttpStatuses) :: status -> [status, statusText]
+HttpStatuses :: Object { [statusText]: status }
 ```
 
 #### Example:
 
 ```javascript
-HttpStatuses['No Content'] // => [ 204, 'No Content' ]
+HttpStatuses['No Content'] // => 204
 ```
 
 ## License
