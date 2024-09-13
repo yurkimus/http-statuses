@@ -9,7 +9,6 @@ Statuses are coming from
 
 - [Installation](#installation)
 - [Exports](#exports)
-  - [HttpStatusesMap](#httpstatusesmap)
   - [HttpStatuses](#httpstatuses)
 - [License](#license)
 
