@@ -1,9 +1,5 @@
 {
   "name": "@yurkimus/http-statuses",
-  "version": "0.0.11",
-  "fmt": {
-    "semiColons": false,
-    "singleQuote": true
-  },
+  "version": "0.0.12",
   "exports": "./source/index.js"
 }
