@@ -46,3 +46,51 @@ export let ResponseStatuses = /** @type {const} */ ({
   'Gateway Timeout': 504,
   'HTTP Version Not Supported': 505,
 })
+
+/**
+ * @typedef {keyof typeof ResponseStatuses | typeof ResponseStatuses[keyof typeof ResponseStatuses]} ResponseStatusInit
+ */
+
+/**
+ * @param {ResponseStatusInit} value
+ */
+export function ResponseStatus(value) {
+  if (!ResponseStatus.has(value))
+    throw new ReferenceError(
+      `Parameter 'value' must be listed in 'ResponseStatuses'`,
+    )
+
+  this.statusText = ResponseStatus
+    .get(value)
+    .at(0)
+
+  this.status = ResponseStatus
+    .get(value)
+    .at(1)
+}
+
+/**
+ * @param {ResponseStatusInit} value
+ */
+ResponseStatus.of = value => new ResponseStatus(value)
+
+/**
+ * @param {ResponseStatusInit} value
+ */
+ResponseStatus.has = value => Boolean(ResponseStatus.get(value))
+
+/**
+ * @param {ResponseStatusInit} value
+ */
+ResponseStatus.get = value => {
+  let found = Object
+    .entries(ResponseStatuses)
+    .find(([statusText, status]) =>
+      statusText === value
+      || status === value
+    )
+
+  return found
+}
+
+ResponseStatus.prototype[Symbol.toStringTag] = 'ResponseStatus'

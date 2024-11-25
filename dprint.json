@@ -1,14 +1,17 @@
 {
   "typescript": {
+    "quoteStyle": "preferSingle",
     "semiColons": "asi",
-    "quoteStyle": "preferSingle"
+    "indentWidth": 2,
+    "useTabs": false,
+    "useBraces": "maintain",
+    "arrowFunction.useParentheses": "preferNone",
+    "lineWidth": 80
   },
 
-  "json": {
-  },
+  "json": {},
 
-  "markdown": {
-  },
+  "markdown": {},
 
   "excludes": [
     "**/node_modules",
