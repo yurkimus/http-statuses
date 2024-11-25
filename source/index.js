@@ -1,4 +1,4 @@
-export var HttpStatuses = /** @type {const} */ ({
+export let ResponseStatuses = /** @type {const} */ ({
   'Continue': 100,
   'Switching Protocols': 101,
   'Processing': 102,

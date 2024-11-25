@@ -1,5 +1,3 @@
 {
-  "name": "@yurkimus/http-statuses",
-  "version": "0.0.13",
-  "exports": "./source/index.js"
+  "version": "0.1.0"
 }

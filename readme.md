@@ -1,6 +1,6 @@
-# HTTP Statuses Listing
+# Response Statuses
 
-Listing of RFC2616 HTTP statuses
+Listing of RFC2616 Response statuses.
 
 Statuses are coming from
 [RFC2616/6.1.1](https://www.rfc-editor.org/rfc/rfc2616#section-6.1.1)
@@ -9,48 +9,27 @@ Statuses are coming from
 
 - [Installation](#installation)
 - [Exports](#exports)
-  - [HttpStatuses](#httpstatuses)
+  - [ResponseStatuses](#responsestatuses)
 - [License](#license)
 
 ## Installation
 
-### npm
-
 ```
-npm install @yurkimus/http-statuses
-```
-
-### urls
-
-```
-"@yurkimus/http-statuses": "npm:@yurkimus/http-statuses"
+"@yurkimus/response-statuses": "github:yurkimus/response-statuses"
 ```
 
 ```
-"@yurkimus/http-statuses": "github:yurkimus/http-statuses"
-```
-
-```
-"@yurkimus/http-statuses": "https://raw.githubusercontent.com/yurkimus/http-statuses/main/source/index.js"
+"@yurkimus/response-statuses": "https://raw.githubusercontent.com/yurkimus/response-statuses/main/source/index.js"
 ```
 
 ## Exports
 
-### HttpStatuses
+### ResponseStatuses
 
 #### Definition:
 
 ```
-status :: Number
-statusText :: String
-
-HttpStatuses :: Object { [statusText]: status }
-```
-
-#### Example:
-
-```javascript
-HttpStatuses['No Content'] // => 204
+ResponseStatuses :: Object { [statusText: string]: number }
 ```
 
 ## License
