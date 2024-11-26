@@ -1,0 +1,7 @@
+{
+  "name": "@yurkimus/response-statuses",
+  "version": "0.2.0",
+  "author": "yurkimus <yurkimus@gmail.com>",
+
+  "exports": "./source/index.js"
+}
