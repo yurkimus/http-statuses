@@ -9,9 +9,9 @@ interface ResponseStatusConstructor {
 
   get(value: Statuses | StatusTexts): string | number
 
-  readonly prototype: ResponseStatusConstructor
+  readonly prototype: typeof ResponseStatus
 
   readonly [Symbol.toStringTag]: 'ResponseStatus'
 }
 
-export let ResponseStatus: ResponseStatusConstructor
+declare var ResponseStatus: ResponseStatusConstructor

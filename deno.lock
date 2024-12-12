@@ -16,12 +16,12 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@yurkimus/message@0.0.10",
+      "npm:@yurkimus/message@0.0.11",
       "npm:@yurkimus/types@0.2.2"
     ],
     "packageJson": {
       "dependencies": [
-        "npm:@yurkimus/message@0.0.10",
+        "npm:@yurkimus/message@0.0.11",
         "npm:@yurkimus/types@0.2.2"
       ]
     }
