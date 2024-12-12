@@ -1,4 +1,4 @@
-# Response Statuses
+# Response Status
 
 Listing of RFC2616 Response statuses.
 
@@ -15,11 +15,11 @@ Statuses are coming from
 ## Installation
 
 ```
-"@yurkimus/response-statuses": "github:yurkimus/response-statuses"
+"@yurkimus/response-status": "github:yurkimus/response-status"
 ```
 
 ```
-"@yurkimus/response-statuses": "https://raw.githubusercontent.com/yurkimus/response-statuses/main/source/index.js"
+"@yurkimus/response-status": "https://raw.githubusercontent.com/yurkimus/response-status/main/source/index.js"
 ```
 
 ## Exports
