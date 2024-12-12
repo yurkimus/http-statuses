@@ -1,4 +1,6 @@
-import type { Statuses, StatusTexts } from './enumeration.d.ts'
+type Statuses = import('./enumeration.d.ts').Statuses
+
+type StatusTexts = import('./enumeration.d.ts').StatusTexts
 
 interface ResponseStatus {
   status: Statuses
