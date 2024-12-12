@@ -1,7 +1,24 @@
 {
-  "name": "@yurkimus/response-statuses",
-  "version": "0.2.0",
+  "type": "module",
+  "name": "@yurkimus/response-status",
+  "version": "0.0.3",
   "author": "yurkimus <yurkimus@gmail.com>",
-
-  "exports": "./source/index.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yurkimus/response-status.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./source/index.d.ts",
+      "import": "./source/index.js"
+    },
+    "./enumeration": {
+      "types": "./source/enumeration.d.ts",
+      "import": "./source/enumeration.js"
+    }
+  },
+  "dependencies": {
+    "@yurkimus/message": "0.0.10",
+    "@yurkimus/types": "0.2.2"
+  }
 }
