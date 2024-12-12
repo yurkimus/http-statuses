@@ -1,8 +1,11 @@
-import { is } from '@yurkimus/types'
+import { is, type } from '@yurkimus/types'
 
 import { ResponseStatusEnum } from './enumeration.js'
 
-export function ResponseStatus(value) {
+if (globalThis.ResponseStatus !== ResponseStatus)
+  globalThis.ResponseStatus = ResponseStatus
+
+function ResponseStatus(value) {
   if (!(this instanceof ResponseStatus))
     return new ResponseStatus(value)
 
@@ -14,13 +17,17 @@ export function ResponseStatus(value) {
       `Parameter 'value' must be listed in 'ResponseStatuses' enumeration.`,
     )
 
-  this.statusText = ResponseStatus
-    .get(value)
-    .at(0)
+  switch (type(value)) {
+    case 'String':
+      this.status = ResponseStatus.get(value)
+      this.statusText = ResponseStatus.get(this.status)
+      return this
 
-  this.status = ResponseStatus
-    .get(value)
-    .at(1)
+    case 'Number':
+      this.statusText = ResponseStatus.get(value)
+      this.status = ResponseStatus.get(this.statusText)
+      return this
+  }
 }
 
 ResponseStatus.has = ResponseStatusEnum
